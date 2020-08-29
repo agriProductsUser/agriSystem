@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agri products | Order</title>
+    <title>Agri products | Payment</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-<!--    <link rel="stylesheet" href="css/nice-select.css" type="text/css">-->
+    <!--    <link rel="stylesheet" href="css/nice-select.css" type="text/css">-->
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
@@ -230,7 +230,7 @@
                     <h2>Order</h2>
                     <div class="breadcrumb__option">
                         <a href="./index.html">Home</a>
-                        <span>Order</span>
+                        <span>Payment</span>
                     </div>
                 </div>
             </div>
@@ -244,93 +244,76 @@
     <div class="container">
 
         <div class="checkout__form">
-            <h4>Order Details</h4>
+            <div class="row">
+                <div class="col-lg-1">
+
+                </div>
+                <div class="col-lg-10">
+                    <h4>Payment Details</h4>
+                </div>
+            </div>
             <form action="#">
                 <div class="row">
-                    <div class="col-lg-8 col-md-6">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-6">
+                        <div class="checkout__input">
+                            <p>Payment type<span>*</span></p>
+                            <select style="width: 100%;height: 46px;border: 1px solid #ebebeb;padding-left: 20px;
+                           font-size: 16px;color: #b2b2b2;border-radius: 15px;" ng-model="pay.type">
+                                <option selected disabled value="">Select payment type</option>
+                                <option>Cash on delivery</option>
+                                <option>Pay online</option>
+                            </select>
+                        </div>
 
                         <div class="checkout__input">
-                            <p>Required date<span>*</span></p>
-                            <input type="text" onfocus="type='date'" ng-model="order.requiredDate"  placeholder="Enter required date">
+                            <p>Total<span>*</span></p>
+                            <input type="text" ng-model="pay.total" placeholder="Enter total">
                         </div>
                         <div class="checkout__input">
-                            <p>Order type<span>*</span></p>
-                           <select style="width: 100%;height: 46px;border: 1px solid #ebebeb;padding-left: 20px;
-                           font-size: 16px;color: #b2b2b2;border-radius: 15px;" ng-model="order.type">
-                               <option selected disabled value="">Select order type</option>
-                               <option>Oder type 01</option>
-                               <option>Order type 02</option>
-                           </select>
+                            <p>Description<span>*</span></p>
+                            <textarea style="width: 100%;height: 86px;border: 1px solid #ebebeb;padding-left: 20px;
+                            font-size: 16px;color: #b2b2b2;border-radius: 15px;" cols="10" ng-model="pay.description" placeholder="Enter description"></textarea>
                         </div>
+
                         <div class="checkout__input">
-                            <p>Order status<span>*</span></p>
-                            <select style="width: 100%;height: 46px;border: 1px solid #ebebeb;padding-left: 20px;
-                           font-size: 16px;color: #b2b2b2;border-radius: 15px;" ng-model="order.orderStatus">
-                                <option selected disabled value="">Select order status</option>
-                                <option>Ordered</option>
-                                <option disabled>Completed</option>
-                                <option disabled>Pending</option>
-                            </select>
+                            <p>Discount id<span>*</span></p>
+                            <input type="text" ng-model="pay.discountId"  placeholder="Enter discount id">
                         </div>
-                        <div class="checkout__input">
-                            <p>Customer id<span>*</span></p>
-                            <input type="text" placeholder="Enter customer id" ng-model="order.customerId">
-                        </div>
-                        <div class="checkout__input">
-                            <p>Delivery method<span>*</span></p>
-                            <select style="width: 100%;height: 46px;border: 1px solid #ebebeb;padding-left: 20px;
-                           font-size: 16px;color: #b2b2b2;border-radius: 15px;" ng-model="order.deliveryMethod">
-                                <option selected disabled value="">Select delivery method</option>
-                                <option>two wheels transport</option>
-                                <option>three wheels transport</option>
-                                <option>four wheels transport</option>
-                            </select>
-                        </div>
-                        <div class="checkout__input">
-                            <p>City<span>*</span></p>
-                            <input type="text" ng-model="order.city"  placeholder="Enter city">
-                        </div>
+
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="checkout__order">
-                            <h4>Your Order</h4>
-                            <div class="checkout__order__products">Products <span>Total</span></div>
-                            <ul>
-                                <li>Vegetable’s Package <span>$75.99</span></li>
-                                <li>Fresh Vegetable <span>$151.99</span></li>
-                                <li>Organic Bananas <span>$53.99</span></li>
-                            </ul>
-                            <div class="checkout__order__subtotal">Subtotal <span>$750.99</span></div>
-                            <div class="checkout__order__total">Total <span>$750.99</span></div>
-                            <div class="checkout__input__checkbox">
-                                <label for="acc-or">
-                                    Create an account?
-                                    <input type="checkbox" id="acc-or">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
-                            <div class="checkout__input__checkbox">
-                                <label for="payment">
-                                    Check Payment
-                                    <input type="checkbox" id="payment">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="checkout__input__checkbox">
-                                <label for="paypal">
-                                    Paypal
-                                    <input type="checkbox" id="paypal">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <a ng-click="submit(order)" style="width: 300px;text-align: center" href="payment.html" type="submit" class="site-btn">Proceed to payment</a>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <button ng-click="submit(pay)" style="width: 300px; text-align: center;margin-left: 745px" type="submit" class="site-btn">PLACE ORDER</button>
                     </div>
                 </div>
+
+
+                <div class="row" ng-init="viewPayment()">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+
+                        </thead>
+                        <tbody>
+                        <tr  ng-repeat="pay in payment1">
+                            <td>{{pay.type}}</td>
+                            <td>{{pay.description}}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </form>
+
         </div>
     </div>
 </section>
