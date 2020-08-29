@@ -25,14 +25,14 @@
             <div class="container-fluid">
 
                 <form class="navbar-left navbar-form nav-search mr-md-3" action="">
-                    <div class="input-group">
-                        <input type="text" placeholder="Search ..." class="form-control">
-                        <div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-                        </div>
-                    </div>
+<!--                    <div class="input-group">-->
+<!--                        <input type="text" placeholder="Search ..." class="form-control">-->
+<!--                        <div class="input-group-append">-->
+<!--								<span class="input-group-text">-->
+<!--									<i class="la la-search search-icon"></i>-->
+<!--								</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </form>
                 <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                     <li class="nav-item dropdown hidden-caret">
@@ -227,42 +227,66 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">Add product to the system</div>
+                            <div class="card-header container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="card-title">Add product to the system</div>
+                                    </div>
+                                    <div class="col-lg-4">
+
+                                        <form class="navbar-right navbar-form nav-search mr-md-3" action="">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Search ..." class="form-control" ng-model=""
+                                                uib-typeahead="" />
+                                                <div class="input-group-append">
+                                    								<span class="input-group-text">
+                                    									<i class="la la-search search-icon"></i>
+                                    								</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="productName">Product name</label>
-                                    <input type="text" class="form-control" id="productName" placeholder="Product name">
+                                    <input type="text" class="form-control" id="productName" placeholder="Product name" ng-model="pro.name">
                                 </div>
                                 <div class="form-group">
                                     <label for="unitPrice">Unit price</label>
-                                    <input type="text" class="form-control" id="unitPrice" placeholder="Unit price">
+                                    <input type="text" class="form-control" id="unitPrice" placeholder="Unit price" ng-model="pro.unitPrice">
                                 </div>
                                 <div class="form-group">
                                     <label for="weight">Weight(kg)</label>
-                                    <input type="text" class="form-control" id="weight" placeholder="Weight">
+                                    <input type="text" class="form-control" id="weight" placeholder="Weight" ng-model="pro.weight">
                                 </div>
                                 <div class="form-group">
                                     <label for="manufacturedLocation">Manufactured Location</label>
-                                    <input type="text" class="form-control" id="manufacturedLocation" placeholder="Manufactured Location">
+                                    <input type="text" class="form-control" id="manufacturedLocation" placeholder="Manufactured Location"
+                                           ng-model="pro.manuLocation">
                                 </div>
                                 <div class="form-group">
                                     <label for="manufacturedDate">Manufactured Date</label>
-                                    <input type="date" class="form-control" id="manufacturedDate" placeholder="Manufactured Date">
+                                    <input type="date" class="form-control" id="manufacturedDate" placeholder="Manufactured Date" ng-model="pro.manuDate">
                                 </div>
                                 <div class="form-group">
                                     <label for="productCategoryId">Product category id</label>
-                                    <input type="text" class="form-control" id="productCategoryId" placeholder="Product category id">
+                                    <input type="text" class="form-control" id="productCategoryId" placeholder="Product category id"
+                                           ng-model="pro.categoryId">
                                 </div>
                                 <div class="form-group">
                                     <label for="stockId">Stock id</label>
-                                    <input type="text" class="form-control" id="stockId" placeholder="Stock id">
+                                    <input type="text" class="form-control" id="stockId" placeholder="Stock id" ng-model="pro.stockId">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control" id="description" rows="5">
+                                    <textarea class="form-control" id="description" rows="5" ng-model="pro.description">
                                     </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Product image</label>
+                                    <input type="file" class="form-control" id="image" ng-model="pro.image">
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
@@ -272,7 +296,7 @@
                                 </div>
                             </div>
                             <div class="card-action">
-                                <button class="btn btn-success">Submit</button>
+                                <button ng-click="submit(pro)" class="btn btn-success">Submit</button>
                                 <button class="btn btn-danger">Cancel</button>
                             </div>
                         </div>

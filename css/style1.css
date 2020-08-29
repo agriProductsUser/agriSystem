@@ -52,7 +52,7 @@ a:hover {
   .inner .image-holder {
     width: 50%; }
   .inner form {
-    width: 50%;
+    width: 100%;
     padding-top: 36px;
     padding-left: 45px;
     padding-right: 45px; }

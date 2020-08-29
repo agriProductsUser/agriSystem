@@ -65,34 +65,48 @@
 </div>
 <div class="wrapper" style="background-image: url('img/loginBg.jpg');">
     <div class="inner">
-        <div class="image-holder">
-            <img src=img/logonew.png alt="">
-            <img src=img/logonew.png alt="">
+<!--        <div class="image-holder">-->
+<!--            <img src=img/logonew.png alt="">-->
+<!--            <img src=img/logonew.png alt="">-->
 
-        </div>
+<!--        </div>-->
         <form action="">
             <h3>Register with us</h3>
-            <div class="form-group">
-                <input type="text" placeholder="First Name" class="form-control">
-                <input type="text" placeholder="Last Name" class="form-control">
-            </div>
-            <div class="form-wrapper">
-                <input type="text" placeholder="Address" class="form-control">
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Post code" class="form-control">
-                <input type="text" placeholder="District" class="form-control">
-            </div>
-            <div class="form-wrapper">
-                <input type="text" placeholder="Seperate Address" class="form-control">
+            <div class="checkout__input">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="First Name"  ng-model="reg.firstName">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Last Name" ng-model="reg.lastName">
+                    </div>
+                </div>
 
             </div>
-            <div class="form-wrapper">
-                <input type="text" placeholder="Email Address" class="form-control">
+            <div class="checkout__input">
+                <input type="text" placeholder="Address" ng-model="reg.address">
+            </div>
+            <div class="checkout__input">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Post code" ng-model="reg.postcode">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="District" ng-model="reg.district">
+                    </div>
+                </div>
 
             </div>
-            <div class="form-wrapper">
-                <input type="text" placeholder="Contact No" class="form-control">
+            <div class="checkout__input">
+                <input type="text" placeholder="Seperate Address" ng-model="reg.sepAddress">
+
+            </div>
+            <div class="checkout__input">
+                <input type="text" placeholder="Email Address" ng-model="reg.email">
+
+            </div>
+            <div class="checkout__input">
+                <input type="text" placeholder="Contact No" ng-model="reg.contact">
 
             </div>
 <!--            <div class="form-wrapper">-->
@@ -104,21 +118,19 @@
 <!--                </select>-->
 <!--               -->
 <!--            </div>-->
-            <div class="form-wrapper">
-                <input type="text" placeholder="Username" class="form-control">
+            <div class="checkout__input">
+                <input type="text" placeholder="Username"  ng-model="reg.username">
 
             </div>
-            <div class="form-wrapper">
-                <input type="password" placeholder="Password" class="form-control">
+            <div class="checkout__input">
+                <input type="password" placeholder="Password" ng-model="reg.password">
 
             </div>
-            <div class="form-wrapper">
-                <input type="password" placeholder="Confirm Password" class="form-control">
+            <div class="checkout__input">
+                <input type="password" placeholder="Confirm Password"  ng-model="reg.confPassword">
 
             </div>
-            <button>Register
-
-            </button>
+            <button ng-click="submit(reg)">Register</button>
         </form>
     </div>
 </div>

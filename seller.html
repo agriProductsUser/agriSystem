@@ -24,16 +24,6 @@
         <nav class="navbar navbar-header navbar-expand-lg">
             <div class="container-fluid">
 
-                <form class="navbar-left navbar-form nav-search mr-md-3" action="">
-                    <div class="input-group">
-                        <input type="text" placeholder="Search ..." class="form-control">
-                        <div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-                        </div>
-                    </div>
-                </form>
                 <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                     <li class="nav-item dropdown hidden-caret">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -229,62 +219,80 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="card-title">Add Seller to the system</div>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="card-title">Add Seller to the system</div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <form class="navbar-right navbar-form nav-search mr-md-3" action="">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Search ..." class="form-control" ng-model=""
+                                                       uib-typeahead="" />
+                                                <div class="input-group-append">
+                                    								<span class="input-group-text">
+                                    									<i class="la la-search search-icon"></i>
+                                    								</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="companyName">Company name</label>
-                                    <input type="text" class="form-control" id="companyName" placeholder="Company name">
+                                    <input type="text" class="form-control" id="companyName" placeholder="Company name" ng-model="sel.compName">
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Address</label>
-                                    <input type="text" class="form-control" id="address" placeholder="Address">
+                                    <input type="text" class="form-control" id="address" placeholder="Address" ng-model="sel.address">
                                 </div>
                                 <div class="form-group">
                                     <label for="district">District</label>
-                                    <input type="text" class="form-control" id="district" placeholder="District">
+                                    <input type="text" class="form-control" id="district" placeholder="District" ng-model="sel.district">
                                 </div>
                                 <div class="form-group">
                                     <label for="contactNo">Contact Number</label>
-                                    <input type="text" class="form-control" id="contactNo" placeholder="Contact Number">
+                                    <input type="text" class="form-control" id="contactNo" placeholder="Contact Number" ng-model="sel.contact">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" ng-model="sel.email">
                                 </div>
                                 <div class="form-group">
                                     <label for="Fax">Fax number</label>
-                                    <input type="text" class="form-control" id="Fax" placeholder="Fax number">
+                                    <input type="text" class="form-control" id="Fax" placeholder="Fax number" ng-model="sel.fax">
                                 </div>
                                 <div class="form-group">
                                     <label for="webURL">Web URL</label>
-                                    <input type="text" class="form-control" id="webURL" placeholder="Web URL">
+                                    <input type="text" class="form-control" id="webURL" placeholder="Web URL" ng-model="sel.web">
                                 </div>
                                 <div class="form-group">
                                     <label for="sellerType">Seller type</label>
-                                    <select class="form-control" id="sellerType">
+                                    <select class="form-control" id="sellerType" ng-model="sel.sellerType">
                                         <option>Regular</option>
                                         <option>Regular</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="BR_No">BR number</label>
-                                    <input type="text" class="form-control" id="BR_No" placeholder="BR number">
+                                    <input type="text" class="form-control" id="BR_No" placeholder="BR number" ng-model="sel.BR">
                                 </div>
                                 <div class="form-check">
                                     <label>Is active</label><br/>
                                     <label class="form-radio-label">
-                                        <input class="form-radio-input" type="radio" name="optionsRadios" value=""  checked="">
+                                        <input class="form-radio-input" type="radio" name="optionsRadios" value=""  checked="" ng-model="sel.yes">
                                         <span class="form-radio-sign">Yes</span>
                                     </label>
                                     <label class="form-radio-label ml-3">
-                                        <input class="form-radio-input" type="radio" name="optionsRadios" value="">
+                                        <input class="form-radio-input" type="radio" name="optionsRadios" value="" ng-model="sel.no">
                                         <span class="form-radio-sign">No</span>
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="stateNonstate">State or Nonstate</label>
-                                    <select class="form-control" id="stateNonstate">
+                                    <select class="form-control" id="stateNonstate" ng-model="sel.stateNonstate">
                                         <option>State</option>
                                         <option>Nonstate</option>
                                     </select>
@@ -297,7 +305,7 @@
                                 </div>
                             </div>
                             <div class="card-action">
-                                <button class="btn btn-success">Submit</button>
+                                <button ng-click="submit(sel)" class="btn btn-success">Submit</button>
                                 <button class="btn btn-danger">Cancel</button>
                             </div>
                         </div>

@@ -24,16 +24,6 @@
         <nav class="navbar navbar-header navbar-expand-lg">
             <div class="container-fluid">
 
-                <form class="navbar-left navbar-form nav-search mr-md-3" action="">
-                    <div class="input-group">
-                        <input type="text" placeholder="Search ..." class="form-control">
-                        <div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-                        </div>
-                    </div>
-                </form>
                 <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                     <li class="nav-item dropdown hidden-caret">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -229,16 +219,33 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="card-title">Add role to the system</div>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="card-title">Add role to the system</div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <form class="navbar-right navbar-form nav-search mr-md-3" action="">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Search ..." class="form-control" ng-model=""
+                                                       uib-typeahead="" />
+                                                <div class="input-group-append">
+                                    								<span class="input-group-text">
+                                    									<i class="la la-search search-icon"></i>
+                                    								</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="roleName">Role name</label>
-                                    <input type="text" class="form-control" id="roleName" placeholder="Role name">
+                                    <input type="text" class="form-control" id="roleName" placeholder="Role name" ng-model="role.name">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control" id="description" rows="5">
+                                    <textarea class="form-control" id="description" rows="5" ng-model="role.description">
                                     </textarea>
                                 </div>
                                 <div class="form-check">
@@ -249,7 +256,7 @@
                                 </div>
                             </div>
                             <div class="card-action">
-                                <button class="btn btn-success">Submit</button>
+                                <button ng-click="submit(role)" class="btn btn-success">Submit</button>
                                 <button class="btn btn-danger">Cancel</button>
                             </div>
                         </div>

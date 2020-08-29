@@ -1,8 +1,8 @@
 angular.module('agri').controller('paymentController',function ($scope,paymentService) {
 
-    $scope.submit =function (dilini) {
+    $scope.submit =function (object) {
 
-        paymentService.savePayment(dilini).then(
+        paymentService.savePayment(object).then(
             function (res) {
                 if (res){
                     console.log("success");
