@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/ready.css">
     <link rel="stylesheet" href="assets/css/demo.css">
 </head>
-<body>
+<body ng-app="">
 <div class="wrapper">
     <div class="main-header">
         <div class="logo-header">
@@ -225,8 +225,9 @@
                                     <div class="col-lg-4">
                                         <form class="navbar-right navbar-form nav-search mr-md-3" action="">
                                             <div class="input-group">
-                                                <input type="text" placeholder="Search ..." class="form-control" ng-model=""
-                                                       uib-typeahead="" />
+                                                <input type="text" placeholder="Search ..." class="form-control" ng-model="selectedVal"
+                                                       uib-typeahead="deliverer.name for deliverers in searchDeliverer($view)"
+                                                       typeahead-on-select="selectedValue($deliverer)"/>
                                                 <div class="input-group-append">
                                     								<span class="input-group-text">
                                     									<i class="la la-search search-icon"></i>
@@ -311,7 +312,8 @@
                             </div>
                             <div class="card-action">
                                 <button ng-click="submit(deliver)" class="btn btn-success">Submit</button>
-                                <button class="btn btn-danger">Cancel</button>
+                                <button class="btn btn-danger" ng-click="clear()">Clear</button>
+                                <button class="btn btn-default" ng-click="delete()">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -384,4 +386,5 @@
 <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
 <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/js/ready.min.js"></script>
+<script src="angular/angular.min.js"></script>
 </html>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/ready.css">
     <link rel="stylesheet" href="assets/css/demo.css">
 </head>
-<body>
+<body ng-app="">
 <div class="wrapper">
     <div class="main-header">
         <div class="logo-header">
@@ -236,8 +236,9 @@
 
                                         <form class="navbar-right navbar-form nav-search mr-md-3" action="">
                                             <div class="input-group">
-                                                <input type="text" placeholder="Search ..." class="form-control" ng-model=""
-                                                uib-typeahead="" />
+                                                <input type="text" placeholder="Search ..." class="form-control" ng-model="selectedVal"
+                                                uib-typeahead="product.name for products in searchProduct($view)"
+                                                typeahead-on-select="selectedValue($prod)"/>
                                                 <div class="input-group-append">
                                     								<span class="input-group-text">
                                     									<i class="la la-search search-icon"></i>
@@ -248,11 +249,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <form name="productForm">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="productName">Product name</label>
                                     <input type="text" class="form-control" id="productName" placeholder="Product name" ng-model="pro.name">
-                                </div>
+                                </div>{{pro.name}}
                                 <div class="form-group">
                                     <label for="unitPrice">Unit price</label>
                                     <input type="text" class="form-control" id="unitPrice" placeholder="Unit price" ng-model="pro.unitPrice">
@@ -285,8 +287,8 @@
                                     </textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Product image</label>
-                                    <input type="file" class="form-control" id="image" ng-model="pro.image">
+                                    <label for="productImage">Product image</label>
+                                    <input type="file" class="form-control" id="productImage" ng-model="pro.image">
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
@@ -297,8 +299,11 @@
                             </div>
                             <div class="card-action">
                                 <button ng-click="submit(pro)" class="btn btn-success">Submit</button>
-                                <button class="btn btn-danger">Cancel</button>
+                                <button class="btn btn-danger" ng-click="clear()">Clear</button>
+                                <button class="btn btn-default" ng-click="delete()">Delete</button>
+
                             </div>
+                            </form>
                         </div>
                     </div>
 
@@ -370,4 +375,5 @@
 <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
 <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/js/ready.min.js"></script>
+<script src="angular/angular.min.js"></script>
 </html>

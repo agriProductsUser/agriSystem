@@ -15,5 +15,33 @@ angular.module('agri').controller('delivererController',function ($scope,deliver
         )
     }
 
+    $scope.searchDeliverer=function(value){
+        return delivererService.viewDeliverers(value).then(
+            function (res){
+                return res;
+            })
+    }
+
+    $scope.selectedValue = function (val) {
+        $scope.deliver=val;
+        $scope.sub="Update";
+        $scope.deliverId=val.id;
+    }
+    $scope.clear = function () {
+        $scope.deliver={};
+    }
+    $scope.delete=function () {
+       return delivererService.deleteDeliverer($scope.deliverId).then(
+           function (response) {
+               if(response==true){
+                   console.log("Deleted successful");
+               }else {
+                   console.log("Delete fail");
+               }
+               return response;
+           }
+       )
+    }
+
 });
 
